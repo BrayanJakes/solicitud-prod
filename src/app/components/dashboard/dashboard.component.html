@@ -1,0 +1,55 @@
+<section class="body ">
+
+<app-pages></app-pages>
+
+
+<div class="cotainer marge margin-left ">
+  <h2>Solicitudes Registrada</h2>
+
+</div>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-12">
+            <section class="panel">
+              <div class="panel-body">
+                <div class="table-responsive">
+                  <table class="table mb-none">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Cedula</th>
+                        <th>Tipo de solicitud</th>
+                        <th>Estado</th>
+                        <th>Operaciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let listado of listados, let i = index">
+                        <td >{{i}}</td>
+                        <td><i class="fa fa-user"></i>  {{ listado.nombre }}</td>
+                        <td>{{ listado.email }}</td>
+                        <td>{{ listado.cedula }}</td>
+                        <td>{{ listado.tipoSolicitud.tipo_solicitud }}</td>
+                        <td> <i class="fa fa-times" *ngIf="listado.estatus === 'Rechazado'" ></i> <i class="fa fa-check" *ngIf="listado.estatus === 'Aprobado'"></i> <i class="fa  fa-clock-o" *ngIf="listado.estatus === 'Procesando'"></i> <i class="fa fa-circle-thin" *ngIf="listado.estatus === 'Pendiente'" ></i>  {{ listado.estatus }}</td>
+                        <td>
+                          <i class="fa fa-eye col-md-6 pointer"  [routerLink]="['/viewsolicitud', listado._id]" ></i>
+                          <i class="fa fa-trash-o  col-md-6 pointer" (click)="borrar(listado._id)" *ngIf="rol === 'Administrador'"></i>
+                        </td>
+                        
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+          </div>
+    </div>
+      
+</div>
+
+</section>

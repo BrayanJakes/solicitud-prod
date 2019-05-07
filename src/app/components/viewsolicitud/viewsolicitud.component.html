@@ -1,0 +1,100 @@
+
+<section class="body">
+  <app-pages></app-pages>
+  <div class="container marge">
+      <div class="row ">
+          <div class="col-lg-12">
+            <section class="panel">
+              <header class="panel-heading">
+  
+        
+                <h2 class="panel-title">Solicitud</h2>
+              </header>
+              <div class="panel-body">
+                <form class="form-horizontal form-bordered" #form="ngForm" (ngSubmit)="actualizar(form)">
+                  <div class="form-group">
+                    <label class="col-md-3 control-label" >Nombre</label>
+                    <div class="col-md-6">
+                      <input type="text" name="nombre" [(ngModel)]="solicitud.nombre" class="form-control" disabled=''>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label" >Email</label>
+                    <div class="col-md-6">
+                      <input type="text" name="email" [(ngModel)]="solicitud.email" class="form-control" disabled=''>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-3 control-label" >Cedula</label>
+                    <div class="col-md-6">
+                      <input type="text" name="cedula" [(ngModel)]="solicitud.cedula" class="form-control" disabled=''>
+                    </div>
+                  </div>
+        
+
+
+                  <div class="form-group">
+                    <label class="col-md-3 control-label" >Fecha de la solicitud</label>
+                    <div class="col-md-6">
+                      <input type="text" name="fecha" [value]="fecha" class="form-control" disabled=''>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="col-md-3 control-label" >Tipo de solicitud</label>
+                    <div class="col-md-6">
+                      <input type="text" name="tsolicitud" [(ngModel)]="solicitud.tipoSolicitud.tipo_solicitud" class="form-control" disabled=''>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-3 control-label" >Mensaje (Opcional)</label>
+                    <div class="col-md-6">
+                      <textarea name="mensaje" disabled='' [(ngModel)]="solicitud.comentario" cols="10" rows="5" class="form-control"></textarea>
+                    </div>
+                  </div>
+  
+                  <div class="form-group">
+                    <label class="col-md-3 control-label" >Estado: {{solicitud.estatus}}</label>
+                    <div class="col-md-6" *ngIf="rol === 'Administrador'">
+                      
+                      <select name="estatus" [(ngModel)]="solicitud.estatus" class="form-control">
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="Procesando">Procesando</option>
+                        <option value="Aprobado">Aprobado</option>
+                        <option value="Rechazado">Rechazado</option>
+                      </select>
+                  </div>
+
+                  
+
+                
+  
+        
+                  <div class="form-group" *ngIf="rol === 'Administrador'">
+                    <div class="col-md-12 marge ">
+                      <button type="submit" class="btn btn-info btn-block">Guardar</button>
+                    </div>
+                    </div>
+  
+  
+  
+  
+  
+      
+              </div>
+                </form>
+              </div>
+            </section>
+        
+            
+           
+        
+           
+        
+          </div>
+        </div>
+  </div>
+  
+  
+  </section>

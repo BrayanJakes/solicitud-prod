@@ -1,0 +1,77 @@
+<section class="body">
+<app-pages></app-pages>
+
+<div class="container marge">
+  <div class="row ">
+      <div class="col-lg-6">
+        <section class="panel">
+          <header class="panel-heading">
+
+    
+            <h2 class="panel-title">Tipo de Solicitud</h2>
+          </header>
+          <div class="panel-body">
+            <form class="form-horizontal form-bordered" #form="ngForm" (ngSubmit)="guardar(form)">
+              <div class="form-group">
+                <label class="col-md-3 control-label" >Nombre</label>
+                <div class="col-md-6">
+                  <input type="text" name="nombre" [(ngModel)]="form.nombre" class="form-control" >
+                </div>
+              </div>
+
+
+    
+              <div class="form-group">
+                <div class="col-md-12  ">
+                  <button type="submit" class="btn btn-info btn-block">Guardar</button>
+                </div>
+                </div>
+
+
+
+
+
+  
+
+            </form>
+          </div>
+        </section>
+    
+        
+       
+    
+       
+    
+      </div>
+
+      <div class="col-lg-6">
+          <div class="table-responsive">
+              <table class="table mb-none">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Tipo de solicitud</th>
+              
+                    <th>Operacion</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let listado of listados, let i = index">
+                    <td >{{i}}</td>
+                    <td><i class="fa fa-archive"></i>  {{ listado.tipo_solicitud }}</td>
+                   
+                    <td>
+                      
+                     <i class="fa fa-trash-o  col-md-6 pointer" (click)="borrar(listado._id)"></i>
+                    </td>
+                    <input type="hidden" [value]="listado._id">
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+
+      </div>
+    </div>
+</div>
+</section>

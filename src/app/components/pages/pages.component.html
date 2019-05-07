@@ -1,0 +1,70 @@
+
+
+
+        <header class="header">
+    
+     
+          <!-- start: search & user box -->
+          <div class="header-right">
+        
+            <span class="separator"></span>
+        
+            <div id="userbox" class="userbox" *ngIf="rol === 'Administrador'">
+                <a  data-toggle="dropdown">
+                  <div class="profile-info" data-lock-name="John Doe" >
+                    <span class="name pointer" [routerLink]="['/tsolicitud']">Tipos de Solicitud</span>
+                  </div>
+                  </a>
+                  </div>
+            <span class="separator"></span>
+        
+        
+            <div id="userbox" class="userbox">
+                <a  data-toggle="dropdown">
+                  <div class="profile-info" >
+                    <span class="name pointer" [routerLink]="['/solicitud/nuevo']">Crear Solicitud</span>
+                  </div>
+                  </a>
+                  </div>
+            <span class="separator"></span>
+            <div id="userbox" class="userbox">
+              <a  data-toggle="dropdown">
+                <div class="profile-info" >
+                  <span class="name pointer" [routerLink]="['/dashboard']">Home</span>
+                </div>
+                </a>
+                </div>
+          <span class="separator"></span>
+        
+            <div id="userbox" class="userbox">
+              <a  data-toggle="dropdown">
+                <div class="profile-info" >
+                  <span class="name pointer">Bienvenido {{nombre}}</span>
+                  <span class="role">{{rol}}</span>
+                </div>
+        
+                <i class="fa custom-caret"></i>
+              </a>
+        
+              <div class="dropdown-menu">
+                <ul class="list-unstyled">
+                  <li class="divider"></li>
+    
+                  <li>
+                    <a role="menuitem" tabindex="-1" [routerLink]="['/config', trpm]"><i class="fa fa-lock"></i> Configuracion</a>
+                  </li>
+                  <li>
+                    <a role="menuitem" tabindex="-1" class="pointer" (click)="salir()"><i class="fa fa-power-off pointer"></i> Salir</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- end: search & user box -->
+        </header>
+        <!-- end: header -->
+    
+    
+
+ 
+      
