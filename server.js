@@ -8,12 +8,14 @@ const app = express();
 app.use(express.static(__dirname + '/dist/appdemo'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-     res.header("Access-Control-Allow-Methods", "POST, PUT, GET, DELETE, OPTIONS");
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
     next();
 });
+
 
 app.set('port', process.env.PORT || 8080)
 
