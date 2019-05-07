@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 export class SettingComponent implements OnInit {
 
   token: string = localStorage.getItem('token');
-  usuario = {};
+  usuario: any = {};
   sonIguales = true;
 
   constructor(private registroService: RegistraService,
@@ -32,7 +32,7 @@ export class SettingComponent implements OnInit {
   ngOnInit() {
   }
 
-  actualizar(form: NgForm, id){
+  actualizar(form: NgForm, id) {
 
     if (form.value.clave1 !== form.value.clave2) {
       return this.sonIguales = false;

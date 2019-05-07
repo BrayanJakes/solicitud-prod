@@ -13,10 +13,10 @@ export class DashboardComponent implements OnInit {
 
   token = localStorage.getItem('token');
   rol = localStorage.getItem('rol');
-  listados: string[] = [];
+  listados: any[] = [];
 
   constructor(private solicitudServices: SolicitudService,
-              private router: Router) { 
+              private router: Router) {
 
   }
 
@@ -28,7 +28,7 @@ export class DashboardComponent implements OnInit {
   solicitudes() {
     this.solicitudServices.listar(this.token)
       .subscribe( (solicitud: any) => {
-        
+
         if (solicitud.message === 'Token incorrecto!') {
           localStorage.removeItem('token');
           localStorage.removeItem('usuario');

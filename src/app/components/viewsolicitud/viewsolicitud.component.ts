@@ -17,7 +17,7 @@ import { NgForm } from '@angular/forms';
 export class ViewsolicitudComponent implements OnInit {
 
   token = localStorage.getItem('token');
-  solicitud = {};
+  solicitud: any = {};
   fecha: string;
   rol: string = localStorage.getItem('rol');
   id: string;
@@ -41,17 +41,17 @@ export class ViewsolicitudComponent implements OnInit {
    }
 
   ngOnInit() {
-   
+
   }
 
-  actualizar(form: NgForm){
+  actualizar(form: NgForm) {
     const solicitud: Solicitud = {
       cedula: form.value.cedula,
       email: form.value.email,
       nombre: form.value.nombre,
       tipoSolicitud: form.value.tsolicitud,
       estatus: form.value.estatus
-    }
+    };
 
     this.solicitudService.actualizar(solicitud, this.id, this.token)
         .subscribe((a: any) => {

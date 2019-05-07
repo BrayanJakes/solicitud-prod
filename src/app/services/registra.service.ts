@@ -27,7 +27,7 @@ export class RegistraService {
      return this.http.get(uri);
   }
 
-  actualizar(usuario, id, token){
+  actualizar(usuario, id, token) {
     const uri = `${this.url}/${id}?token=${token}`;
     return this.http.put(uri, usuario);
   }

@@ -6,4 +6,5 @@ export interface Solicitud {
     comentario?: string;
     estatus?: string;
 
+// tslint:disable-next-line:eofline
 }

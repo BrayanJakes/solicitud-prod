@@ -4,5 +4,5 @@ export interface Usuario {
        cedula: string;
         password: string;
         celular?: string;
-
+// tslint:disable-next-line:eofline
 }

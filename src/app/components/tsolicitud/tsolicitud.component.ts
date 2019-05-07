@@ -13,12 +13,12 @@ import {Tsolicitud} from '../../configuraciones/tsolicitud';
 })
 export class TsolicitudComponent implements OnInit {
 
-  form = {
+  forma: any = {
     nombre: ''
   };
 
   token: string = localStorage.getItem('token');
-  listados: string[] = [];
+  listados: any[] = [];
 
   constructor(private tsolicitudServices: TsolicitudService) { }
 
@@ -31,7 +31,7 @@ export class TsolicitudComponent implements OnInit {
 
     const tsolicitud: Tsolicitud = {
       tipo_solicitud: form.value.nombre
-    }
+    };
 
     this.tsolicitudServices.agregar(tsolicitud, this.token).subscribe((t) => {
 

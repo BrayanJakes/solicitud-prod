@@ -16,9 +16,11 @@ import Swal from 'sweetalert2';
 export class SolicitudComponent implements OnInit {
 
   token: string = localStorage.getItem('token');
-  tsolicitudes: string[] = [];
+  tsolicitudes: any[] = [];
   cedulaE = false;
   emailE = false;
+
+
 
   constructor(private solicitudService: SolicitudService,
               private tsolitudService: TsolicitudService,
