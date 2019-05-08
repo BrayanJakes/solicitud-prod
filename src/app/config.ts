@@ -1,2 +1,2 @@
 // tslint:disable-next-line:eofline
-export const URI = 'http://solicitu-desingweb.herokuapp.com:3000';
+export const URI = 'https://solicitud-webapps.herokuapp.com';
