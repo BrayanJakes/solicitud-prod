@@ -37,11 +37,11 @@
             <div class="row">
               <div class="col-sm-6 mb-lg">
                 <label>Contraseña</label>
-                <input name="clave1"  type="password" class="form-control input-lg">
+                <input name="clave1"  type="password"  [(ngModel)]="form.value.clave1" class="form-control input-lg">
               </div>
               <div class="col-sm-6 mb-lg">
                 <label>Confirmar contraseña </label>
-                <input name="clave2"  type="password" class="form-control input-lg">
+                <input name="clave2"  type="password" [(ngModel)]="form.value.clave2" class="form-control input-lg">
               </div>
             </div>
      
