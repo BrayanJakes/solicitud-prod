@@ -34,6 +34,8 @@ export class RegistroComponent implements OnInit {
     }
 
 
+
+
     const usuario: Usuario = {
       nombre: form.value.name,
       email: form.value.email,

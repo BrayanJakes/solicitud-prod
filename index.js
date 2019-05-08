@@ -3,9 +3,6 @@ const path = require('path');
 const app = express();
 
 
-
-const { Mongoose } = require('./database/database');
-
 //Inportaciones de rutas
 
 
@@ -36,14 +33,6 @@ app.get('*', function(req,res) {
 
 
 //rutas
-
-app.use(require('./routes/usuario'));
-app.use(require('./routes/login'));
-app.use(require('./routes/tipo_solicitud'));
-app.use(require('./routes/solicitud'));
-
-
-
 
 
 //servidor activo
